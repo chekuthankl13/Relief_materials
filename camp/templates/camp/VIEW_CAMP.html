@@ -1,0 +1,30 @@
+{% extends 'temp/index.html' %}
+
+{% block base %}
+
+<h1 align="center">VIEW CAMP</h1>
+<table align="center" class="table table-bordered text-center">
+    {% if objval %}
+
+	<tr style="font-weight: bolder">
+		<th>DETAILS</th>
+		<th>SERVICES</th>
+		<th>DATE</th>
+		<th>PLACE</th>
+		<th>LOCATION</th>
+
+	</tr>
+    {% for ob in objval %}
+	<tr>
+
+		<th>{{ ob.details }}</th>
+		<th>{{ ob.service }}</th>
+		<th>{{ ob.date }}</th>
+		<th>{{ ob.place }}</th>
+		<th>{{ ob.location }}</th>
+	</tr>
+    {% endfor %}
+{% endif %}
+</table>
+
+{% endblock %}

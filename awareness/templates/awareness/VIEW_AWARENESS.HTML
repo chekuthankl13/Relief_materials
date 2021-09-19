@@ -1,0 +1,26 @@
+{% extends 'temp/camp.html' %}
+
+{% block base %}
+
+<h1 align="center">VIEW AWARENESS</h1>
+<table align="center" class="table table-bordered text-center">
+    {% if objval %}
+	<tr style="font-weight: bolder">
+		
+		<th>DATE</th>
+		<th>AWARENESS</th>
+		
+
+	</tr>
+    {% for ob in objval %}
+	<tr>
+
+		<th>{{ ob.date }}</th>
+		<th>{{ ob.awareness }}</th>
+
+	</tr>
+     {% endfor %}
+{% endif %}
+</table>
+
+{% endblock %}

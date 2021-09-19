@@ -1,0 +1,26 @@
+{% extends 'temp/authority.html' %}
+
+
+{% block base %}
+
+<h1 align="center">VIEW INFORMATION</h1>
+<table align="center" class="table table-bordered text-center">
+    {% if objval %}
+	<tr style="font-weight: bolder">
+		
+		<th>DATE</th>
+		<th>INFORMATION</th>
+		
+
+	</tr>
+    {% for ob in objval %}
+	<tr>
+
+		<th>{{ ob.date }}</th>
+		<th>{{ ob.information }}</th>
+		
+	</tr>
+    {% endfor %}
+{% endif %}
+</table>
+{% endblock %}

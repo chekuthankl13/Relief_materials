@@ -1,0 +1,46 @@
+{% extends 'temp/authority.html' %}
+
+{% block base %}
+	<h1 align="center">REGISTER</h1>
+	<table align="center">
+
+		<form method="post">
+            {% csrf_token %}
+			<tr>
+			<td>DETAILS</td>
+			<td height="50"><input type="text" name="details" class="form-control" required=""></td>
+		</tr>
+		<tr>
+			<td>SERVICES</td>
+			<td height="50"><input type="text" name="services" class="form-control" required=""></td>
+		</tr>
+            <tr>
+			<td>CAMP NAME</td>
+			<td height="50"><input type="text" name="name" class="form-control" required=""></td>
+		</tr>
+            <tr>
+			<td>PASSWORD</td>
+			<td height="50"><input type="password" name="p"class="form-control" required=""></td>
+		</tr>
+		<tr>
+			<td>DATE</td>
+			<td height="50"><input type="date" name="date" class="form-control" required=""></td>
+		</tr>
+		<tr>
+			<td>PLACE</td>
+			<td height="50"><input type="text" name="place" class="form-control" required=""></td>
+		</tr>
+		<tr>
+			<td>LOCATION</td>
+			<td height="50"><input type="text" name="location" class="form-control" required=""></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td height="50"><input type="submit" name="register_camp" value="SUBMIT" class="btn btn-primary"></td>
+		</tr>
+		</form>
+		
+	</table>
+
+{% endblock %}

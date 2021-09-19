@@ -1,0 +1,25 @@
+{% extends 'temp/camp.html' %}
+
+{% block base %}
+
+<h1 align="center">DONATION_REQUEST</h1>
+<table align="center">
+	<form method="post">
+        {% csrf_token %}
+		<tr>
+			<td>DATE</td>
+			<td height="50"><input type="date" name="date" class="form-control" required=""></td>
+		</tr>
+		<tr>
+			<td>REQUEST</td>
+			<td height="50"><input type="text" name="request" class="form-control" required=""></td>
+		</tr>
+
+
+		<TD></TD>
+		<td height="50"><input type="submit" name="donation_request" value="SUBMIT" class="btn btn-primary"></td>
+		
+	</form>
+</table>
+
+{% endblock %}

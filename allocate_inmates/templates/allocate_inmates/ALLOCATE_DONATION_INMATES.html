@@ -1,0 +1,67 @@
+{% extends 'temp/camp.html' %}
+
+
+
+{% block base %}
+
+
+<h1 align="center"> DONATION </h1>
+<table align="center"  class="table table-bordered text-center">
+    {% if objval %}
+	<tr>
+		<th>CAMP </th>
+		<th>TIME</th>
+		<th>DATE</th>
+        <th>DONOR NAME</th>
+        <th>AMOUNT</th>
+
+
+	</tr>
+    {% for ob in objval %}
+	<tr>
+
+       <!-- <th>{{ ob.cid }}</th>-->
+       <!-- <th>{{ ob.req.request }}</th>-->
+		<th>{{ ob.detail }}</th>
+		<th>{{ ob.time }}</th>
+		<th>{{ ob.date }}</th>
+        <th>{{ ob.do.name}}</th>
+        <th>{{ ob.amount }}</th>
+{#    <td><a href="{% url 'allocate' icc=ob.did %}">ALLOCATE</a> </td>#}
+
+	</tr>
+     {% endfor %}
+{% endif %}
+</table>
+
+    <br><br>
+	<h1 align="center">ALLOCATE TO INMATES</h1>
+	<table align="center">
+		<tr></tr>
+		<form method="post">
+             {% csrf_token %}
+			<tr>
+				<td>DATE</td>
+				<td height="50"><input type="date" name="date" class="form-control" required=""></td>
+			</tr>
+			<tr>
+				<td>INMATES</td>
+{#				<td height="50"><input type="text" name="inmates" class="form-control" required=""></td>#}
+                <td height="50"><select class="form-control" name="select">
+                    {% for od in obval %}
+                    <option>{{ od.name }}</option>
+                    {% endfor %}
+                </select></td>
+			</tr>
+			<tr>
+				<td>DONATION</td>
+				<td height="50"><input type="text" name="donation" class="form-control" required=""></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td height="50"><input type="submit" name="btnsubmit" class="btn btn-primary"></td>
+			</tr>
+		</form>
+	</table>
+
+{% endblock %}

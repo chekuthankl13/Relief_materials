@@ -1,0 +1,35 @@
+{% extends 'temp/index.html' %}
+
+{% block base %}
+
+	<h1 align="center">MANAGE AUTHORITY</h1>
+
+<table align="center" class="table table-bordered text-center">
+
+     {% if objval %}
+	<tr style="font-weight: bolder">
+		
+		
+		<th>NAME</th>
+		<th>ADDRESS</th>
+		<th>PHONE</th>
+		<th>EMAIL</th>
+
+
+	</tr>
+    {% for ob in objval %}
+	<tr>
+		
+		<td>{{ ob.name }}</td>
+		<td>{{ ob.address }}</td>
+		<td>{{ ob.phone }}</td>
+		<td>{{ ob.email }}</td>
+		<td><a href="{% url 'sapprove' idd=ob.id %}">APPROVE</a></td>
+		<td><a href="{% url 'sreject' icc=ob.id %}">REJECT</a></td>
+
+	</tr>
+    {% endfor %}
+{% endif %}
+</table>
+
+{% endblock %}

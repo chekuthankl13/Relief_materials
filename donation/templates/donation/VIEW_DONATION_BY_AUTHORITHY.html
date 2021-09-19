@@ -1,0 +1,33 @@
+{% extends 'temp/authority.html' %}
+{% block base %}
+
+<h1 align="center">ALLOCATE DONATION TO CAMP</h1>
+<table align="center"  class="table table-bordered text-center">
+    {% if objval %}
+	<tr>
+		<th>CAMP </th>
+		<th>TIME</th>
+		<th>DATE</th>
+        <th>DONOR NAME</th>
+        <th>AMOUNT</th>
+
+
+	</tr>
+    {% for ob in objval %}
+	<tr>
+
+       <!-- <th>{{ ob.cid }}</th>-->
+       <!-- <th>{{ ob.req.request }}</th>-->
+		<th>{{ ob.detail }}</th>
+		<th>{{ ob.time }}</th>
+		<th>{{ ob.date }}</th>
+        <th>{{ ob.do.name}}</th>
+        <th>{{ ob.amount }}</th>
+    <td><a href="{% url 'allocate' icc=ob.did %}">ALLOCATE</a> </td>
+
+	</tr>
+     {% endfor %}
+{% endif %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'temp/camp.html' %}
+
+{% block base %}
+
+	<h1 align="center">VIEW STATUS CAMP REQUIREMENT</h1>
+	<table align="center" class="table table-bordered text-center">
+        {% if objval %}
+		<tr style="font-weight: bolder">
+			<td>DATE</td>
+			<td>REQUIREMENT</td>
+			<td>STATUS</td>
+		</tr>
+         {% for ob in objval %}
+		<tr>
+			<td>{{ ob.date }}</td>
+			<td>{{ ob.requirements }}</td>
+			<td>{{ ob.status }}</td>
+		</tr>
+         {% endfor %}
+{% endif %}
+	</table>
+
+
+{% endblock %}

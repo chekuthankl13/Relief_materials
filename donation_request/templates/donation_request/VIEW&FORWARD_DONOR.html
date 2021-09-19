@@ -1,0 +1,25 @@
+{% extends 'temp/authority.html' %}
+
+{% block base %}
+
+	<h1 align="center"> VIEW  DONATION_REQUEST</h1>
+<table align="center"class="table table-bordered text-center">
+    {% if objval %}
+	<tr style="font-weight: bolder">
+		<th>DATE</th>
+		<th>REQUEST</th>
+        <th>CAMP ID</th>
+		
+	</tr>
+     {% for ob in objval %}
+	<tr>
+		<td>{{ ob.date }}</td>
+		<td>{{ ob.request }}</td>
+        <td>{{ ob.cid }}</td>
+        <td><a href="{% url 'forward' iff=ob.id %}" >forward to donor</a></td>
+	</tr>
+        {% endfor %}
+{% endif %}
+</table>
+
+{% endblock %}

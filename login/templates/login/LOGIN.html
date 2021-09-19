@@ -1,0 +1,28 @@
+{% extends 'temp/login.html' %}
+
+{% block base %}
+
+<h1 align="center">LOGIN</h1>
+<table align="center">
+	<form  method="post">
+        <font color="blue">
+
+		{% csrf_token %}
+			<tr>
+			<td>USERNAME</td>
+			<td height="50"><input type="text" name="name" class="form-control" required=""></td>
+		</tr>
+
+		<tr >
+			<td>PASSWORD</td>
+			<td height="50"><input type="PASSWORD" name="password" class="form-control" required=""></td>
+		</tr>
+
+		<TD></TD>
+
+		<td height="50"><input class="btn-success" type="submit" name="login" value="LOGIN" ></td>
+
+        </font>
+	</form>
+</table>
+{% endblock %}

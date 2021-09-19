@@ -1,0 +1,32 @@
+{% extends 'temp/authority.html' %}
+
+{% block base %}
+	<h1 align="center">MANAGE DONATION__REQUEST</h1>
+
+<table align="center"class="table table-bordered text-center">
+    {% if objval %}
+	<tr style="font-weight: bolder">
+		
+		<th>DATE</th>
+		<th>REQUEST</th>
+        <th>CAMP ID</th>
+        <th>STATUS</th>
+		
+
+	</tr>
+    {% for ob in objval %}
+	<tr>
+		
+		<td>{{ ob.date }}</td>
+		<td>{{ ob.request }}</td>
+        <td>{{ ob.cid }}</td>
+        <td>{{ ob.status }}</td>
+		
+		<td><a href="{% url 'dapprove' idd=ob.id %}">APPROVE</a></td>
+		<td><a href="{% url 'dreject' icc=ob.id %}">REJECT</a></td>
+
+	</tr>
+    {% endfor %}
+{% endif %}
+</table>
+{% endblock %}

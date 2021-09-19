@@ -1,0 +1,30 @@
+{% extends 'temp/authority.html' %}
+
+{% block base %}
+<h1 align="center">MANAGE CAMP_REQUEST</h1>
+<table align="center" class="table table-bordered text-center">
+    {% if objval %}
+	<tr style="font-weight: bolder">
+		<td>DATE</td>
+		<td>CAMP NAME</td>
+		<td>REQUEST</td>
+        <td>STATUS</td>
+
+		
+	</tr>
+    {% for ob in objval %}
+	<tr>
+		
+		<td>{{ ob.date }}</td>
+        <td>{{ ob.crid }}</td>
+		<td>{{ ob.requirements }}</td>
+        <td>{{ ob.status }}</td>
+		<td>
+			<a href="{% url 'capprove' idd=ob.crid %}">ALLOCATE</a><br>
+			<a href="{% url 'creject' idd=ob.crid %}">REJECT</a>
+		</td>
+	</tr>
+        {% endfor %}
+{% endif %}
+</table>
+{% endblock %}

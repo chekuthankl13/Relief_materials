@@ -1,0 +1,23 @@
+{% extends 'temp/index.html' %}
+
+{% block base %}
+
+<h1 align="center">POST INFORMATION</h1>
+<table align="center">
+	<form method="post">
+        {% csrf_token %}
+		<tr>
+			<td>DATE</td>
+			<td height="50"><input type="date" name="date" class="form-control" required=""></td>
+		</tr>
+		<tr>
+			<td>INFORMATION</td>
+			<td height="50"><input type="text" name="information" class="form-control" required=""></td>
+		</tr>
+		<TD></TD>
+		<td height="50"><input type="submit" name="post_information" value="SUBMIT" class="btn btn-primary"></td>
+		
+	</form>
+</table>
+
+{% endblock %}

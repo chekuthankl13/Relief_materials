@@ -1,0 +1,37 @@
+{% extends 'temp/camp.html' %}
+{% block base %}
+<h1 align="center">REGISTER </h1>
+	<table align="center">
+
+		<form method="post">
+            {% csrf_token %}
+			<tr>
+			<td>NAME</td>
+			<td height="50"><input type="text" name="name" class="form-control"></td>
+		</tr>
+{#            <tr>#}
+{#			<td>PASSWORD</td>#}
+{#			<td><input type="password" name="p"></td>#}
+{#		</tr>#}
+		<tr>
+			<td>AGE</td>
+			<td  height="50"><input type="text" name="age" class="form-control"></td>
+		</tr>
+		
+			<tr>
+			<td>GENDER</td>
+			<td><input type="radio" name="gen" value="Male">Male</td>
+			<td><input type="radio" name="gen" value="female">Female</td>
+			
+
+		</tr>
+				
+
+		<tr>
+			<td></td>
+			<td  height="50"><input type="submit" name="register_camp" value="SUBMIT" class="btn btn-primary"></td>
+		</tr>
+		</form>
+		
+	</table>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'temp/authority.html' %}
+
+{% block base %}
+	<h1 align="center">MANAGE CAMP</h1>
+
+<table align="center" class="table table-bordered text-center">
+{% if objval %}
+	<tr style="font-weight: bolder">
+		
+		
+		<th>DETAILS</th>
+		<th>SERVICES</th>
+		<th>DATE</th>
+		<th>PLACE</th>
+		<th>LOCATION</th>
+        <th>STATUS</th>
+
+
+	</tr>
+    {% for ob in objval %}
+	<tr>
+		
+		<td>{{ ob.details }}</td>
+		<td>{{ ob.service }}</td>
+		<td>{{ ob.date }}</td>
+		<td>{{ ob.place }}</td>
+		<td>{{ ob.location }}</td>
+        <td>{{ ob.status }}</td>
+		<td><a href="{% url 'approve' idd=ob.cid %}">APPROVE</a></td>
+		<td><a href="{% url 'reject' idd=ob.cid %}">REJECT</a></td>
+
+	</tr>
+    {% endfor %}
+{% endif %}
+</table>
+{% endblock %}

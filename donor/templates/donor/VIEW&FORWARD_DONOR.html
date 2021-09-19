@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view</title>
+</head>
+<body>
+<h1 align="center">VIEW</h1>
+<table align="center" class="table table-bordered text-center">
+    {% if objval %}
+	<tr style="font-weight: bolder">
+		<td>DATE</td>
+		<td>DETAIL</td>
+		<td>TIME</td>
+	</tr>
+    {% for ob in objval %}
+	<tr>
+		<td>{{ ob.  }}</td>
+		<td></td>
+		<td></td>
+		<td>
+			<a href="">FORWARD TO DONOR</a>
+		</td>
+	</tr>
+    {% endfor %}
+{% endif %}
+</table>
+</body>
+</html>
